@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Monochrome Theme for Gmail",
+    "version": "1.0",
+    "description": "A modern and minimalistic Monochrome theme for Gmail.",
+    "author": "jessedi0n",
+    "permissions": [
+        "activeTab"
+    ],
+    "icons": {
+        "16": "icons/gmail-mono.png",
+        "48": "icons/gmail-mono.png",
+        "128": "icons/gmail-mono.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://mail.google.com/*"
+            ],
+            "css": [
+                "styles.css"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "icons/*"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "use_dynamic_url": true
+        }
+    ]
+}
